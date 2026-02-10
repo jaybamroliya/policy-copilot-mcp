@@ -1,4 +1,4 @@
-# 🛡️ Policy Copilot
+# 🛡️ Policy Copilot MCP
 **Real-time governance & safety layer for MCP-based AI agents**
 
 Policy Copilot demonstrates how unsafe AI agents can be **controlled, audited,
@@ -55,4 +55,5 @@ for other AI agents.
 ---
 
 ## 🧠 High-Level Architecture
+
 
