@@ -146,19 +146,28 @@ This demonstrates governance as infrastructure, not prompt engineering.
 ⚙️ How It Works (Runtime Flow)
 
 1️⃣ Worker agent attempts an action
+
 2️⃣ Policy Copilot evaluates the tool call
+
 3️⃣ Unsafe tools are blocked
+
 4️⃣ Outputs are scanned and rewritten
+
 5️⃣ Model usage is validated
+
+All enforcement happens before results leave the system.
 
 All enforcement happens before results leave the system.
 
 🧪 Demo
 
 Run:
+```
 demo.cmd
+```
 
 Expected output:
+```
 Worker agent running (MCP-style tool server)
 Policy Copilot running (policy enforcement layer)
 
@@ -167,6 +176,7 @@ Worker agent attempts unsafe actions...
 BLOCKED Tool: send_email
 REWRITTEN Output: PII removed
 ALLOWED Model switched to gpt-4o-mini
+```
 
 
 What Happened?
@@ -175,6 +185,7 @@ What Happened?
 - Expensive model usage was prevented
 
 All decisions were made by a separate MCP policy server.
+
 
 
 
