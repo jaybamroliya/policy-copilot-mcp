@@ -120,11 +120,14 @@ policies:
     type: output_rewrite
     keywords:
       - "@example.com"
+    action: redact
 
   - name: restrict_model
     type: model_limit
     allowed_models:
       - gpt-4o-mini
+
+
 
 What These Rules Enforce
 - ❌ Block external communication
@@ -171,3 +174,4 @@ What Happened?
 - Expensive model usage was prevented
 
 All decisions were made by a separate MCP policy server.
+
