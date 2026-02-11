@@ -110,6 +110,7 @@ Separation of concerns:
 
 All enforcement logic is defined in policy/rules.yaml.
 
+```yaml
 policies:
   - name: block_external_email
     type: tool_block
@@ -120,12 +121,12 @@ policies:
     type: output_rewrite
     keywords:
       - "@example.com"
-    action: redact
 
   - name: restrict_model
     type: model_limit
     allowed_models:
       - gpt-4o-mini
+
 
 
 
@@ -174,4 +175,5 @@ What Happened?
 - Expensive model usage was prevented
 
 All decisions were made by a separate MCP policy server.
+
 
