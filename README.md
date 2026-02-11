@@ -126,7 +126,7 @@ policies:
     type: model_limit
     allowed_models:
       - gpt-4o-mini
-
+```
 
 
 
@@ -175,5 +175,6 @@ What Happened?
 - Expensive model usage was prevented
 
 All decisions were made by a separate MCP policy server.
+
 
 
