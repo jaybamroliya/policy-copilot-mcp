@@ -171,32 +171,29 @@ All enforcement happens before results leave the system.
 
 All enforcement happens before results leave the system.
 
-🧪 Demo
+🧪 Demo Scenario
 
-Run:
-```
-demo.cmd
-```
+Task:
+- Summarize customer data and email results
 
-Expected output:
-```
-Worker agent running (MCP-style tool server)
-Policy Copilot running (policy enforcement layer)
+Enforcement Results:
 
-Running task: Summarize customers and email results
-Worker agent attempts unsafe actions...
-BLOCKED Tool: send_email
-REWRITTEN Output: PII removed
-ALLOWED Model switched to gpt-4o-mini
-```
+- ❌ External email blocked
+- ✂️ PII redacted
+- 💰 Expensive model prevented
+- ✅ Allowed model automatically applied
 
 
-What Happened?
-- Email tool was blocked
-- Customer PII was redacted
-- Expensive model usage was prevented
+🎯 Why This Matters
+Policy Copilot demonstrates:
+- Governance as Infrastructure
+- Runtime AI Safety
+- Enterprise Compliance Control
+- Deterministic Agent Enforcement
+- Deterministic Agent Enforcemen
 
-All decisions were made by a separate MCP policy server.
+This turns Archestra into a production-grade AI control plane.
+
 
 
 
