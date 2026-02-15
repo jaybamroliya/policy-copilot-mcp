@@ -1,0 +1,10 @@
+mcp_servers:
+  - name: worker-agent
+    path: agent/worker_server.py
+
+  - name: policy-copilot
+    path: policy/policy_server.py
+
+policies:
+  enforcement: enabled
+  observability: enabled

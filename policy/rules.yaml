@@ -1,0 +1,16 @@
+policies:
+  - name: block_external_email
+    type: tool_block
+    tool: send_email
+    reason: "External communication is not allowed"
+
+  - name: redact_pii
+    type: output_rewrite
+    keywords:
+      - "@example.com"
+    action: redact
+
+  - name: restrict_model
+    type: model_limit
+    allowed_models:
+      - gpt-4o-mini
