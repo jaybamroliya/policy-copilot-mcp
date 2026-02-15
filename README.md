@@ -1,33 +1,34 @@
 # 🛡️ Policy Copilot (MCP Governance Layer)
-**Real-time governance & safety layer for MCP-based AI agents**
+**Governance Layer for Archestra Agent Orchestration**
 
-Policy Copilot demonstrates how unsafe AI agents can be **controlled, audited,
-and governed in real time** using a separate policy control plane.
+Policy Copilot is a runtime governance extension for Archestra, adding deterministic enforcement to AI agent orchestration built on MCP.
 
-Built during Hack to demonstrate secure agent orchestration using Archestra principles.
+Policy Copilot is a runtime governance extension for Archestra, adding deterministic enforcement to AI agent orchestration built on MCP.
 
 ---
 
 ## 🚨 The Problem
 
-Modern AI agents are powerful — but dangerous by default.
+It transforms Archestra from a coordination system into a governed agent infrastructure platform.
 
 An autonomous agent can:
-- Read sensitive customer data (PII)
-- Call external tools like email or APIs
-- Use expensive or unapproved models
-- Ignore prompt-based safety rules
+- AI agents orchestrated by platforms like Archestra can:
+- Trigger external APIs
+- Send emails
+- Use expensive models
+- Bypass prompt-based safety
 
 **Prompt instructions are not enforcement.**
-Once an agent is running, there is usually **no real control layer**.
+Modern AI systems lack deterministic runtime governance.
 
 ---
 
 ## 💡 The Idea
 
-What if AI agents were governed like production systems?
+We extended Archestra with a Governance Middleware Layer called Policy Copilot.
 
 Instead of trusting the agent:
+Archestra routes every action through a policy enforcement layer.
 - We **intercept tool calls**
 - We **inspect outputs**
 - We **enforce model usage**
@@ -84,27 +85,38 @@ Simulates agent behavior and shows real-time policy enforcement clearly.
 ## 🧠 Architecture Diagram
 
 ```text
-┌─────────────┐
-│   CLI Demo  │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│ Policy      │  <-- Policy Decisions
-│ Copilot MCP │
-└──────┬──────┘
-       │ Allowed / Blocked
-       ▼
-┌─────────────┐
-│ Worker      │  <-- Tool Calls
-│ Agent MCP   │
-└─────────────┘
+User Request
+     ↓
+┌─────────────────────┐
+│ Archestra           │
+│ Orchestrator        │  ← Routing, planning, context mgmt
+└─────────┬───────────┘
+          ↓
+┌─────────────────────┐
+│ Policy Copilot      │  ← Governance middleware
+│ (Compliance Layer)  │     - RBAC
+│                     │     - Cost control
+│                     │     - Tool allow/block
+│                     │     - Safety
+└─────────┬───────────┘
+          ↓ Approved Plan
+┌─────────────────────┐
+│ Worker Agent (MCP)  │  ← Executes plan
+│                     │     - Tool calls
+│                     │     - Model calls
+│                     │     - External APIs
+└─────────┬───────────┘
+          ↓
+┌─────────────────────┐
+│ Tools / Models      │  ← Databases, APIs, LLMs, Files
+└─────────────────────┘
+
 ```
 
 Separation of concerns:
-- Worker executes
-- Policy governs
-- CLI orchestrates
+- Archestra → Orchestration
+- Policy Copilot → Enforcement
+- Worker Agent → Execution
 
 📜 Policy-as-Code
 
@@ -185,6 +197,7 @@ What Happened?
 - Expensive model usage was prevented
 
 All decisions were made by a separate MCP policy server.
+
 
 
 
